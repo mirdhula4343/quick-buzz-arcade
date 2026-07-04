@@ -77,20 +77,27 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "QuickBuzz — Real-time Multiplayer Buzzer Game" },
+      {
+        name: "description",
+        content:
+          "Host a real-time buzzer game show in seconds. Millisecond-accurate buzz detection, up to 10 players, no accounts needed.",
+      },
+      { property: "og:title", content: "QuickBuzz" },
+      {
+        property: "og:description",
+        content: "Real-time multiplayer buzzer game. Fast, fun, no signup.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap",
       },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
   }),
