@@ -4,7 +4,9 @@ import { joinRoom } from "@/lib/room";
 import { Loader2, ArrowLeft } from "lucide-react";
 import { z } from "zod";
 
-const joinSearch = z.object({ code: z.coerce.string().optional() });
+const joinSearch = z.object({
+  code: z.preprocess((v) => (v == null ? undefined : String(v)), z.string().optional()),
+});
 
 export const Route = createFileRoute("/join")({
   validateSearch: joinSearch,
