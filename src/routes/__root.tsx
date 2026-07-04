@@ -83,13 +83,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Host a real-time buzzer game show in seconds. Millisecond-accurate buzz detection, up to 10 players, no accounts needed.",
       },
-      { property: "og:title", content: "QuickBuzz" },
+      { property: "og:title", content: "QuickBuzz — Real-time Multiplayer Buzzer Game" },
       {
         property: "og:description",
         content: "Real-time multiplayer buzzer game. Fast, fun, no signup.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "QuickBuzz — Real-time Multiplayer Buzzer Game" },
+      { name: "description", content: "Host a real-time buzzer game show in seconds. Millisecond-accurate buzz detection, up to 10 players, no accounts needed." },
+      { property: "og:description", content: "Host a real-time buzzer game show in seconds. Millisecond-accurate buzz detection, up to 10 players, no accounts needed." },
+      { name: "twitter:description", content: "Host a real-time buzzer game show in seconds. Millisecond-accurate buzz detection, up to 10 players, no accounts needed." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c78f0b36-3aba-49c0-9f9c-3657e1a06cf1/id-preview-4c61e25b--fbc3d38c-6502-4565-a83d-ac975b35a53e.lovable.app-1783145750526.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/c78f0b36-3aba-49c0-9f9c-3657e1a06cf1/id-preview-4c61e25b--fbc3d38c-6502-4565-a83d-ac975b35a53e.lovable.app-1783145750526.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
