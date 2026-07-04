@@ -14,7 +14,128 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      buzzes: {
+        Row: {
+          buzzed_at: string
+          id: string
+          player_id: string
+          room_id: string
+          round: number
+        }
+        Insert: {
+          buzzed_at?: string
+          id?: string
+          player_id: string
+          room_id: string
+          round: number
+        }
+        Update: {
+          buzzed_at?: string
+          id?: string
+          player_id?: string
+          room_id?: string
+          round?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "buzzes_player_id_fkey"
+            columns: ["player_id"]
+            isOneToOne: false
+            referencedRelation: "players"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "buzzes_room_id_fkey"
+            columns: ["room_id"]
+            isOneToOne: false
+            referencedRelation: "rooms"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      players: {
+        Row: {
+          client_id: string
+          connected: boolean
+          id: string
+          is_eliminated: boolean
+          is_host: boolean
+          joined_at: string
+          name: string
+          room_id: string
+          score: number
+        }
+        Insert: {
+          client_id: string
+          connected?: boolean
+          id?: string
+          is_eliminated?: boolean
+          is_host?: boolean
+          joined_at?: string
+          name: string
+          room_id: string
+          score?: number
+        }
+        Update: {
+          client_id?: string
+          connected?: boolean
+          id?: string
+          is_eliminated?: boolean
+          is_host?: boolean
+          joined_at?: string
+          name?: string
+          room_id?: string
+          score?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "players_room_id_fkey"
+            columns: ["room_id"]
+            isOneToOne: false
+            referencedRelation: "rooms"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      rooms: {
+        Row: {
+          code: string
+          created_at: string
+          current_round: number
+          host_client_id: string
+          id: string
+          locked: boolean
+          round_active: boolean
+          settings: Json
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          code: string
+          created_at?: string
+          current_round?: number
+          host_client_id: string
+          id?: string
+          locked?: boolean
+          round_active?: boolean
+          settings?: Json
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          code?: string
+          created_at?: string
+          current_round?: number
+          host_client_id?: string
+          id?: string
+          locked?: boolean
+          round_active?: boolean
+          settings?: Json
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
